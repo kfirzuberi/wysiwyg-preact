@@ -1,6 +1,8 @@
 language: node_js
+node_js:
+  - '10'
 script:
-  - echo 'build'
-  - npm i
   - echo 'test'
   - npm run test
+install:
+  - npm install

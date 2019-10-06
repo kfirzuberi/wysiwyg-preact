@@ -1,6 +1,6 @@
 {
-  "name": "my-project",
-  "short_name": "my-project",
+  "name": "preact WYSIWYG sandbox",
+  "short_name": "preact WYSIWYG",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",

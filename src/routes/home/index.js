@@ -1,10 +1,10 @@
 import { h } from 'preact';
 import style from './style';
+import { SandBox } from '../../components/sandbox'
 
 const Home = () => (
 	<div class={style.home}>
-		<h1>Home</h1>
-		<p>This is the Home component.</p>
+		<SandBox></SandBox>
 	</div>
 );
 

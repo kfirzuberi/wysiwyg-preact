@@ -1,0 +1,68 @@
+
+	.data {
+		width: 50%;
+		height: calc(100% - 56px);
+		position: absolute;
+		top: 56px;
+
+		&.output {
+			right: 0;
+		}
+		
+		&.input {
+			left: 0;
+
+			.input-text{
+				width: 96% !important;
+				left: 2%;
+				position: absolute;
+				height: calc(100% - 56px - 28px) !important;
+				bottom: 2%;
+				background: transparent;
+				margin: 0px;
+			}
+
+			.actions{
+				width: 100%;
+			}
+
+			.action-button{
+				padding: 15px 32px;
+				text-align: center;
+				-webkit-transition-duration: 0.4s;
+				transition-duration: 0.4s;
+				text-decoration: none;
+				font-size: 16px;
+				cursor: pointer;
+				border-radius: 3px;
+				background-color: transparent;
+				width: 47%;
+				position: absolute;
+			    margin: 2%;
+			}
+			
+			.action-button:hover {
+				color: white;
+			  }
+
+			  .run{
+				color: #4CAF50;
+				border: 2px solid #4CAF50;
+				left: 0;
+			  }
+
+			  .run:hover {
+				background-color: #4CAF50; /* Green */
+			  }
+
+			  .clean{
+				color: #008CBA;
+				border: 2px solid #008CBA;
+				right: 0;
+			  }
+
+			  .clean:hover {
+				background-color: #008CBA; /* Blue */
+			  }
+		}
+	}

@@ -7,7 +7,6 @@ export class SandBox extends Component {
         this.state = {
             value: 'Please write here DOM elements Model...'
         };
-        debugger;
 
         this.handleChange = this.handleChange.bind(this);
         this.handleUpdate = this.handleUpdate.bind(this);

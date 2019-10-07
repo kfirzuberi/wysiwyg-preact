@@ -1,22 +1,23 @@
-import { Component } from 'preact';
-import { getTranslator as translate } from '../../../services/stylesTranslateros/styleTranslatorFactory';
+import { BaseComponent } from '../base';
 import style from './style';
 
-export class Button extends Component {
+export class Button extends BaseComponent {
     constructor(props) {
         super(props);
 
-        this.setStyle(this.props.data.Style);
+        this.setState({
+            canClick: this.props.data.Action.type !== 'none'
+        })
+
+        this.handleClick = this.handleClick.bind(this);
     }
 
-    setStyle(data) {
-        const dynamicStyle = Object.keys(data).reduce((acc, style) =>
-            Object.assign(acc, translate(style)(data)), {});
-
-        this.setState({ style: dynamicStyle });
+    handleClick() {
+        console.log(this.props.data.Action);
     }
 
     render() {
-        return <button class={style['wysiwyg-shape']} style={this.state.style}> {this.props.data.Content.Text} </button>
+        return <button class={style['wysiwyg-button']} style={this.state.style} {...this.props.data.Content.Attributes}
+            onClick={this.state.canClick ? this.handleClick : undefined}> {this.props.data.Content.Text} </button>
     }
 }

@@ -1,11 +1,11 @@
-import { Component } from 'preact';
+import { BaseComponent } from '../base';
 import { getTranslator as translate } from '../../../services/stylesTranslateros/styleTranslatorFactory';
 import style from './style';
 import { Shape } from "../shape";
 import { Image } from "../image";
 import { Button } from "../button";
 
-export class Canvas extends Component {
+export class Canvas extends BaseComponent {
     constructor(props) {
         super(props);
 
@@ -15,13 +15,6 @@ export class Canvas extends Component {
     shouldComponentUpdate(nextProps, nextState) {
         const style = nextProps.data.Style;
         this.setStyle(style);
-    }
-
-    setStyle(data) {
-        const dynamicStyle = Object.keys(data).reduce((acc, style) =>
-            Object.assign(acc, translate(style)(data)), {});
-
-        this.setState({ style: dynamicStyle });
     }
 
     render() {

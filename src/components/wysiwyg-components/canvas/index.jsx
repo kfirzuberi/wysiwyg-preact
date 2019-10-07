@@ -8,16 +8,41 @@ export class Canvas extends Component {
 
         this.setStyle(this.props.data.Style);
     }
-    shouldComponentUpdate(nextProps, nextState) {
+
+    componentDidMount(){
+        console.log('componentDidMount');
+    }
+
+    componentWillUnmount(){
+        console.log('componentWillUnmount');
+    }
+
+    getDerivedStateFromProps(){
+        console.log('getDerivedStateFromProps');
+    }
+
+    shouldComponentUpdate(nextProps, nextState){
+        console.log('shouldComponentUpdate');
+
         const style = nextProps.data.Style; //this.props.data.Style 
         this.setStyle(style);
     }
+
+    getSnapshotBeforeUpdate(){
+        console.log('getSnapshotBeforeUpdate');
+    }
+
+    componentDidUpdate(){
+        console.log('componentDidUpdate');
+    }
+
     setStyle(data) {
         const dynamicStyle = Object.keys(data).reduce((acc, style) =>
             Object.assign(acc, translate(style)(data)), {});
 
         this.setState({ style: dynamicStyle });
     }
+
     render() {
         return <div class={style['wysiwyg-canvas']} style={this.state.style}></div>
     }

@@ -1,5 +1,5 @@
 import style from './style';
-import { Component } from 'preact';
+import { Component, h } from 'preact';
 
 export class Overlay extends Component {
     constructor(props) {

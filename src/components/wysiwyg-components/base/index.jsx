@@ -1,6 +1,7 @@
 import { Component } from 'preact';
 import { getTranslator as translate } from '../../../services/stylesTranslateros/styleTranslatorFactory';
 import style from './style';
+import { h } from 'preact';
 
 export class BaseComponent extends Component {
     constructor(props) {

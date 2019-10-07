@@ -1,6 +1,7 @@
 import { Component } from 'preact';
 import { Canvas } from '../canvas';
 import { Overlay } from '../overlay';
+import { h } from 'preact';
 
 export class WYSIWYG extends Component {
     constructor(props) {

@@ -1,9 +1,9 @@
 import { BaseComponent } from '../base';
-import { getTranslator as translate } from '../../../services/stylesTranslateros/styleTranslatorFactory';
 import style from './style';
 import { Shape } from "../shape";
 import { Image } from "../image";
 import { Button } from "../button";
+import { h } from 'preact';
 
 export class Canvas extends BaseComponent {
     constructor(props) {

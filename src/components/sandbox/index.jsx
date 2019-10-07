@@ -1,11 +1,16 @@
 import { Component } from 'preact';
 import style from './style';
+import { Canvas } from '../wysiwyg-components/canvas'
 
 export class SandBox extends Component {
     constructor(props) {
         super(props);
+
+        const model = { RootVisualElement: { Text: 'Please write here DOM elements Model...', Style: {} } };
+
         this.state = {
-            value: 'Please write here DOM elements Model...'
+            value: JSON.stringify(model, null, 2),
+            data: model
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -15,14 +20,15 @@ export class SandBox extends Component {
 
     handleUpdate() {
         console.log(this.state.value);
-
     }
+
     handleClear() {
-        this.setState({value:''})
+        this.setState({ value: '' })
     }
 
     handleChange(event) {
-        this.setState({ value: event.target.value });
+        const newValue = event.target.value;
+        this.setState({ value: newValue, data: JSON.parse(newValue) });
     }
 
     render() {
@@ -36,6 +42,7 @@ export class SandBox extends Component {
 
             </div>
             <div class={style['data'] + " " + style['output']}>
+                <Canvas data={this.state.data.RootVisualElement}></Canvas>
             </div>
         </div>
     }

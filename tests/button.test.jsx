@@ -3,7 +3,7 @@ import { h } from 'preact';
 import { mount, render } from 'enzyme';
 import { act } from 'preact/test-utils';
 
-import { Button } from '../src/components/wysiwyg-components/button';
+import { ButtonClass } from '../src/components/wysiwyg-components/button';
 
 describe('Button', () => {
     let data, wrapper;
@@ -16,7 +16,7 @@ describe('Button', () => {
             }
         };
 
-        wrapper = mount(<Button data={data}></Button>);
+        wrapper = mount(<ButtonClass data={data}></ButtonClass>);
     })
 
     test('should add . on click using simulate', () => {

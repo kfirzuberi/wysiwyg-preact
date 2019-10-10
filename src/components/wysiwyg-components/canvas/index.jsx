@@ -26,7 +26,7 @@ export class Canvas extends BaseComponent {
             }
         }
 
-        const all = this.props.data.ChildElements.map(shape => getComponent(shape));
+        const all = (this.props.data.ChildElements || []).map(shape => getComponent(shape));
 
         return <div class={style['wysiwyg-canvas']} style={this.state.style}>
             {all}
